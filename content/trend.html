@@ -1,0 +1,81 @@
+<!--meta
+title: The 200-day rule: half the crash, less money
+kicker: Strategy note 03 · Trend filter
+desc: A 21-year backtest of the 200-day moving-average rule on the Sensex, with the good years, the bad years and the costs.
+slug: trend
+-->
+<p class="lede">In 2008 the Sensex fell 52%. An investor following one simple line lost 18%. Over 21 years the same rule also left less money at the end. Both results are below.</p>
+
+<div class="grid2">
+  <div class="stat"><div class="label">Arjun · buy &amp; hold</div><div class="num">₹11,45,027</div><div class="c-muted">worst fall −60.9%</div></div>
+  <div class="stat"><div class="label c-gold">Meera · 200-day rule</div><div class="num c-gold">₹8,03,688</div><div class="c-muted">worst fall −29.5%</div></div>
+</div>
+<p class="c-muted">₹1 lakh each in the Sensex, January 2005 → June 2026.</p>
+
+<h2>The rule</h2>
+<ol class="steps">
+  <li>Every trading day, compute the Sensex's <b>200-day average</b>: the average of its last 200 closing prices.</li>
+  <li>Close <b>above</b> the average: stay invested.</li>
+  <li>Close <b>below</b> the average: sell the next day and park the money in safe debt (6% a year assumed).</li>
+  <li>When the close moves back above, buy back the next day.</li>
+</ol>
+<div class="formula">Spreadsheet: =IF(B201 &gt; AVERAGE(B2:B201), "IN", "OUT")<br>(column B = daily closes; fill down)</div>
+
+<h2>Backtest results (Sensex, 2005 → June 2026)</h2>
+<div class="table-wrap"><table>
+  <tr><th></th><th class="n">Buy &amp; hold</th><th class="n">200-day rule</th></tr>
+  <tr><td>₹1 lakh became</td><td class="n">₹11,45,027</td><td class="n">₹8,03,688</td></tr>
+  <tr><td>Return per year (CAGR)</td><td class="n">12.02%</td><td class="n">10.19%</td></tr>
+  <tr><td>Worst fall from a peak</td><td class="n c-red">−60.9%</td><td class="n">−29.5%</td></tr>
+  <tr><td>Trades</td><td class="n">1</td><td class="n">161 switches (~7.5 a year)</td></tr>
+  <tr><td>Time invested</td><td class="n">100%</td><td class="n">76%</td></tr>
+</table></div>
+
+<h3>Year by year: where it helped, where it hurt</h3>
+<div class="table-wrap"><table>
+  <tr><th>Year</th><th class="n">Buy &amp; hold</th><th class="n">200-day rule</th><th>What happened</th></tr>
+  <tr><td>2008</td><td class="n c-red">−52.4%</td><td class="n">−17.6%</td><td class="c-green">Crash avoided</td></tr>
+  <tr><td>2011</td><td class="n c-red">−24.6%</td><td class="n">−4.5%</td><td class="c-green">Bear market avoided</td></tr>
+  <tr><td>2015</td><td class="n">−5.0%</td><td class="n c-red">−9.4%</td><td class="c-red">False alarm</td></tr>
+  <tr><td>2016</td><td class="n">+1.9%</td><td class="n c-red">−3.4%</td><td class="c-red">False alarm</td></tr>
+  <tr><td>2020</td><td class="n">+15.8%</td><td class="n">+19.2%</td><td class="c-green">COVID fall partly avoided</td></tr>
+  <tr><td>2022</td><td class="n">+4.4%</td><td class="n c-red">−6.0%</td><td class="c-red">False alarm</td></tr>
+</table></div>
+
+<h2>Why it costs return</h2>
+<ul class="check">
+  <li><b>False alarms (whipsaws):</b> the market dips below the line, you sell, and it recovers. You buy back higher.</li>
+  <li><b>Late by design:</b> the rule sells after a fall has started and buys after a rise has started. It never catches the top or the bottom.</li>
+  <li><b>Time out of the market:</b> 24% of the time the money sat in safe debt while stocks often rose.</li>
+</ul>
+
+<h2>Costs the backtest leaves out</h2>
+<ul class="check">
+  <li><b>Tax:</b> in India, selling listed equity within 12 months is taxed as short-term capital gain (20% since July 2024). A rule with ~7 switches a year triggers it often.</li>
+  <li><b>Behaviour:</b> selling into a falling market and buying back after a rally feels wrong. The rule only works if you follow every signal.</li>
+  <li><b>Dividends:</b> the test uses the price index. Real index funds also collect dividends while invested.</li>
+</ul>
+
+<h2>Robustness</h2>
+<p>The pattern holds in every variant we ran: shallower crashes, lower long-run return.</p>
+<div class="table-wrap"><table>
+  <tr><th>Variant</th><th class="n">B&amp;H CAGR</th><th class="n">Rule CAGR</th><th class="n">B&amp;H worst</th><th class="n">Rule worst</th></tr>
+  <tr><td>From 2005, cash 6%</td><td class="n">12.0%</td><td class="n">10.2%</td><td class="n">−60.9%</td><td class="n">−29.5%</td></tr>
+  <tr><td>From 2005, cash 0%</td><td class="n">11.7%*</td><td class="n">8.5%*</td><td class="n">−60.9%</td><td class="n">−29.5%</td></tr>
+  <tr><td>From 2000, cash 6%</td><td class="n">10.3%*</td><td class="n">9.3%*</td><td class="n">−60.9%</td><td class="n">−41.6%</td></tr>
+</table></div>
+<p class="sources">* window ends 31 Oct 2026.</p>
+
+<h2>Who this suits</h2>
+<ul class="check">
+  <li>Someone who would panic-sell in a 50% crash. A rule that halves the fall is worth more than a higher return they cannot hold through.</li>
+  <li>Someone close to a goal (retirement, a house) who cannot wait years for a recovery.</li>
+  <li><b>Not</b> for someone who will skip signals, or who pays high tax on every switch.</li>
+</ul>
+
+<h2>Sources and method</h2>
+<ul class="sources">
+  <li>Calculated by whyxsamy from Yahoo Finance daily closes of the Sensex price index (^BSESN), 3 Jan 2005 → 30 Jun 2026.</li>
+  <li>Signal on the close, trade on the next day; 0.1% cost per switch; out-of-market money earns 6% a year; no tax.</li>
+  <li>Arjun and Meera are illustrative characters. Past results do not predict future results.</li>
+</ul>

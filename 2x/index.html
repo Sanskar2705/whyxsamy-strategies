@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock back to ₹100. Its 2x ETF at ₹83. · whyxsamy</title>
+<meta name="description" content="Volatility decay explained day by day, with a calculator to test any daily swing and holding period.">
+<meta property="og:title" content="Stock back to ₹100. Its 2x ETF at ₹83.">
+<meta property="og:description" content="Volatility decay explained day by day, with a calculator to test any daily swing and holding period.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body><div class="wrap">
+<header class="top"><a class="brand" href="../">why<span>x</span>samy</a><a class="back" href="../">All notes</a></header>
+<div class="kicker">Strategy note 04 · Leveraged ETFs</div>
+<h1>Stock back to ₹100. Its 2x ETF at ₹83.</h1>
+<div class="actions"><a class="btn" href="../pdf/2x.pdf" download>Download PDF</a><a class="btn ghost" href="../">More notes</a></div>
+<p class="lede">Rohan bought a stock. Kabir bought the 2x ETF on the same stock. Twenty days later the stock was exactly where it started, and Kabir had lost 17%.</p>
+
+<div class="grid2">
+  <div class="stat"><div class="label">Rohan · the stock</div><div class="num">₹100.00</div><div class="c-muted">after 20 days</div></div>
+  <div class="stat"><div class="label c-violet">Kabir · 2x daily ETF</div><div class="num c-violet">₹83.24</div><div class="c-muted">after 20 days</div></div>
+</div>
+
+<h2>What a 2x ETF does</h2>
+<p>It aims to deliver <b>two times the stock's return each day</b>. It does not promise two times the return over a month or a year.</p>
+
+<h2>Two days, step by step</h2>
+<div class="table-wrap"><table>
+  <tr><th>Day</th><th class="n">Stock move</th><th class="n">Stock</th><th class="n">ETF move</th><th class="n">2x ETF</th></tr>
+  <tr><td>Start</td><td class="n"></td><td class="n">₹100.00</td><td class="n"></td><td class="n">₹100.00</td></tr>
+  <tr><td>Day 1</td><td class="n c-green">+10%</td><td class="n">₹110.00</td><td class="n c-green">+20%</td><td class="n">₹120.00</td></tr>
+  <tr><td>Day 2</td><td class="n c-red">−9.09%</td><td class="n">₹100.00</td><td class="n c-red">−18.18%</td><td class="n">₹98.18</td></tr>
+</table></div>
+<div class="card gold"><b>Why ₹1.82 disappeared:</b> the gain was 20% of ₹100 = ₹20. The loss was 18.18% of ₹120 = <b>₹21.82</b>. Same percentage logic, bigger base. Every up-and-down round trip shaves a little.</div>
+
+<h3>Ten rounds (20 days)</h3>
+<div class="table-wrap"><table>
+  <tr><th>Rounds</th><th class="n">Stock</th><th class="n">2x ETF</th></tr>
+  <tr><td>1</td><td class="n">₹100</td><td class="n">₹98.18</td></tr>
+  <tr><td>2</td><td class="n">₹100</td><td class="n">₹96.40</td></tr>
+  <tr><td>5</td><td class="n">₹100</td><td class="n">₹91.23</td></tr>
+  <tr><td>10</td><td class="n">₹100</td><td class="n c-red">₹83.24</td></tr>
+</table></div>
+
+<h2>The rule of thumb</h2>
+<div class="formula">Daily drag of a 2x fund ≈ (daily swing)²<br>e.g. ±9.5% days → ≈ 0.9% lost per day while the stock goes nowhere</div>
+<p>The bigger the daily swings, the faster the decay. In a steady one-way trend a 2x fund can beat 2× the stock; in choppy markets it falls behind. Fees and borrowing costs come on top of this.</p>
+
+<div class="card calc no-print">
+  <div class="kicker">Decay calculator</div>
+  <label for="swing">Daily swing (stock goes up by this %, then down to where it started)</label>
+  <input id="swing" type="number" value="10" min="0.1" max="40" step="0.1">
+  <label for="days">Days</label>
+  <input id="days" type="number" value="20" min="2" max="500" step="2">
+  <label for="lev">Leverage</label>
+  <input id="lev" type="number" value="2" min="1" max="5" step="1">
+  <div class="out" id="calc-out"></div>
+</div>
+
+<h2>The real-world case</h2>
+<div class="card red">
+  <div class="kicker">Korea · 16 June → 15 July 2026</div>
+  <p>Retail investors put a net <b>5.85 trillion won</b> into single-stock 2x leveraged ETFs on two large chipmakers in one month. Over the same month the two underlying shares fell <b>19.5%</b> and <b>24.3%</b>. A 2x daily product falls roughly twice as hard, plus decay.</p>
+</div>
+
+<h2>Checklist before touching a leveraged ETF</h2>
+<ul class="check">
+  <li>Do I understand that it resets <b>daily</b>, and my result over weeks will not be 2× the stock?</li>
+  <li>Am I holding it for a day or two, as designed, or for months?</li>
+  <li>Have I calculated the decay at today's volatility (calculator above)?</li>
+  <li>Can I afford a fall twice as large as the stock's, on top of decay?</li>
+  <li>Have I read the fund's prospectus section on daily objectives and compounding?</li>
+</ul>
+
+<h2>Sources and method</h2>
+<ul class="sources">
+  <li>Illustrative maths by whyxsamy: stock alternates +10% / −9.0909%; a 2x daily product doubles each day's move; no fees or financing costs.</li>
+  <li>Korea flows: The Financial News (fnnews), 20 Jul 2026. SK hynix products 4.2386 trillion won plus Samsung Electronics products 1.6119 trillion won of retail net buying (sum by whyxsamy); shares −19.49% and −24.33%.</li>
+  <li>Background: Motley Fool, "Leveraged ETFs deliver fast results, losses quick", 11 Mar 2026.</li>
+  <li>Rohan and Kabir are illustrative characters.</li>
+</ul>
+<script src="../assets/calc.js"></script>
+<div class="disclaimer"><b>Educational only. Not investment advice.</b> whyxsamy is not registered with SEBI as an investment adviser or research analyst. Nothing here is a recommendation to buy, sell or hold any security. Past returns do not predict future returns. Figures are from the sources listed on each page; calculated figures are labelled as such. Talk to a SEBI-registered adviser before acting.</div>
+<footer>@whyxsamy · a Why, answered</footer>
+</div></body></html>
