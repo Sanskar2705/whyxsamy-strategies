@@ -9,6 +9,7 @@ The full breakdown behind each @whyxsamy reel: the numbers, how the strategy wor
 | 03 · The 200-day rule: half the crash, less money | `/trend/` |
 | 04 · Stock back to ₹100. Its 2x ETF at ₹83. | `/2x/` |
 | 05 · Factor seasons: why winning strategies take turns | `/factor/` |
+| AI 01 · 700 AI agents broke into Hugging Face | `/agents/` |
 
 Each page has a PDF version in `/pdf/`.
 

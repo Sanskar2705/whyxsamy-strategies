@@ -10,15 +10,19 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ORDER = ["rupee", "yield", "trend", "2x", "factor"]
-COLORS = {"rupee": "c-saffron", "yield": "c-green", "trend": "c-gold", "2x": "c-violet", "factor": "c-blue"}
-KEYWORD = {"rupee": "RUPEE", "yield": "YIELD", "trend": "TREND", "2x": "2X", "factor": "FACTOR"}
+ORDER = ["rupee", "yield", "trend", "2x", "factor", "agents"]
+COLORS = {"rupee": "c-saffron", "yield": "c-green", "trend": "c-gold", "2x": "c-violet", "factor": "c-blue", "agents": "c-violet"}
+KEYWORD = {"rupee": "RUPEE", "yield": "YIELD", "trend": "TREND", "2x": "2X", "factor": "FACTOR", "agents": "REPORT"}
 CHROME = [r"C:\Program Files\Google\Chrome\Application\chrome.exe", r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"]
 
 DISCLAIMER = ("<b>Educational only. Not investment advice.</b> whyxsamy is not registered with SEBI as an investment adviser or "
               "research analyst. Nothing here is a recommendation to buy, sell or hold any security. Past returns do not predict future "
               "returns. Figures are from the sources listed on each page; calculated figures are labelled as such. Talk to a "
               "SEBI-registered adviser before acting.")
+
+AI_DISCLAIMER = ("<b>Explainer, not a primary source.</b> This note summarises the public reports linked above (OpenAI, METR / Redwood "
+                 "Research and press coverage of Hugging Face's post-mortem). Where sources differ, we follow the companies' own reports. "
+                 "Read the originals before quoting a number.")
 
 HEAD = """<!doctype html>
 <html lang="en">
@@ -55,7 +59,7 @@ def page(meta, body):
            f'<div class="actions"><a class="btn" href="../pdf/{slug}.pdf" download>Download PDF</a>'
            f'<a class="btn ghost" href="../">More notes</a></div>\n')
     return (HEAD.format(title=html.escape(meta["title"]), desc=html.escape(meta["desc"]), up="../") + top + body + "\n"
-            + FOOT.format(disc=DISCLAIMER))
+            + FOOT.format(disc=AI_DISCLAIMER if meta.get("track") == "ai" else DISCLAIMER))
 
 
 def index(metas):
